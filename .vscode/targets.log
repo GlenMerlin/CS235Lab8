@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar 10 17:56:01 2022
+# Make data base, printed on Fri Mar 11 12:58:07 2022
 
 # Variables
 
@@ -17,7 +17,7 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0d37139d-740d-4f17-b623-6f5718bdf699.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2d147743-d53d-4013-aa41-efb78543a641.sock
 # environment
 LC_NAME = en_US.UTF-8
 # environment
@@ -59,7 +59,7 @@ VSCODE_CODE_CACHE_PATH = /home/glenmerlin/.config/Code/CachedData/c722ca6c7eed3d
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.Y66GI1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.5UTNI1
 # default
 .LOADED := 
 # environment
@@ -67,13 +67,13 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.591
+GNOME_TERMINAL_SERVICE = :1.131
 # makefile
 MAKEFLAGS = pqrR
 # environment
 LESS_TERMCAP_so = [01;47;34m
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=c0c80d9d5128f2afe6b8522a622a8606
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=c16acfaf3d71cb63235e4ce3622ba9a2
 # makefile
 CURDIR := /home/glenmerlin/CS 235/CS235Lab8
 # environment
@@ -103,7 +103,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 20513
+VSCODE_PID = 4331
 # environment
 MOZ_ENABLE_WAYLAND = 1
 # environment
@@ -111,7 +111,7 @@ XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/Lysithea:@/tmp/.ICE-unix/1598,unix/Lysithea:/tmp/.ICE-unix/1598
+SESSION_MANAGER = local/Lysithea:@/tmp/.ICE-unix/3210,unix/Lysithea:/tmp/.ICE-unix/3210
 # automatic
 *F = $(notdir $*)
 # environment
@@ -121,7 +121,7 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 INSIDE_NAUTILUS_PYTHON = 
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=c0c80d9d5128f2afe6b8522a622a8606
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=c16acfaf3d71cb63235e4ce3622ba9a2
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -139,13 +139,13 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5d779b82_7bed_455b_ab4b_629035b6b8e9
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/e8f1fbc7_55ab_4a0c_8c17_5f29ef53069f
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/glenmerlin/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH = /home/glenmerlin/.local/bin:/home/glenmerlin/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/jvm/default/bin
 # environment
 LESS_TERMCAP_se = [0m
 # default
@@ -189,7 +189,7 @@ LOGNAME = glenmerlin
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1598
+SYSTEMD_EXEC_PID = 3210
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -294,7 +294,6 @@ all:
 # ^ := 
 # automatic
 # ? := 
- 
 # automatic
 # | := 
 # variable set hash-table stats:
@@ -336,6 +335,6 @@ makefile:
 # strcache performance: lookups = 25 / hit rate = 36%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Thu Mar 10 17:56:01 2022
+# Finished Make data base on Fri Mar 11 12:58:07 2022
 
  

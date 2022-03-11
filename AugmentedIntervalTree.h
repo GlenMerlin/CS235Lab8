@@ -2,20 +2,20 @@
 
 using namespace std;
 template<class T>
-class AugmentedIntervalTree : public IntervalTree {
+class AugmentedIntervalTree : public IntervalTree<T> {
     public: 
         AugmentedIntervalTree(){
             cout << "AIT Constructor" << endl;
-            // Node<T>* root = nullptr;
+            root = nullptr;
         };
         
         virtual ~AugmentedIntervalTree(){
             cout << "AIT Constructor" << endl;
-            // delete root;
+            delete root;
         };
-
+        Node<T>* root;
         void clear(){
-            // clearHelper(root);
+            clearHelper(root);
         };
 
         void clearHelper(Node<T>*& currentNode){
@@ -28,8 +28,7 @@ class AugmentedIntervalTree : public IntervalTree {
         };
         
         bool is_empty(){
-            // return root == nullptr
-            return nullptr;
+            return root == nullptr;
         };
         
         bool add(T const& lower, T const& upper){
