@@ -1,3 +1,10 @@
 {
-    "makefile.extensionOutputFolder": "./.vscode"
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/glenmerlin/CS 235/CS235Lab8",
+            "binaryPath": "/home/glenmerlin/CS 235/CS235Lab8/test",
+            "binaryArgs": []
+        }
+    ]
 }
