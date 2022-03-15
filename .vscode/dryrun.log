@@ -1,6 +1,5 @@
-make test --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/glenmerlin/CS 235/CS235Lab8'
 g++ -g -std=c++11 -o test tests.cpp
-valgrind --leak-check=full ./test
 make: Leaving directory '/home/glenmerlin/CS 235/CS235Lab8'
  

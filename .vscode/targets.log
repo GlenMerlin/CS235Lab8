@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sun Mar 13 21:19:20 2022
+# Make data base, printed on Tue Mar 15 08:15:18 2022
 
 # Variables
 
@@ -18,7 +17,7 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-801f9855-5440-4084-b082-3a1f0244ff57.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-917d2e97-74b5-43c7-b38f-565b598b6b55.sock
 # environment
 LC_NAME = en_US.UTF-8
 # environment
@@ -60,7 +59,7 @@ VSCODE_CODE_CACHE_PATH = /home/glenmerlin/.config/Code/CachedData/c722ca6c7eed3d
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.HF4OI1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.ZWELJ1
 # default
 .LOADED := 
 # environment
@@ -68,13 +67,13 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.151
+GNOME_TERMINAL_SERVICE = :1.186
 # makefile
 MAKEFLAGS = pqrR
 # environment
 LESS_TERMCAP_so = [01;47;34m
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=4617bf6d064201ed1ef25047622f165e
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=38b3e146d8f8dec2ed61dc6d62309ec9
 # makefile
 CURDIR := /home/glenmerlin/CS 235/CS235Lab8
 # environment
@@ -104,7 +103,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4753
+VSCODE_PID = 12373
 # environment
 MOZ_ENABLE_WAYLAND = 1
 # environment
@@ -112,7 +111,7 @@ XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/Hyperion:@/tmp/.ICE-unix/2919,unix/Hyperion:/tmp/.ICE-unix/2919
+SESSION_MANAGER = local/Lysithea:@/tmp/.ICE-unix/1491,unix/Lysithea:/tmp/.ICE-unix/1491
 # automatic
 *F = $(notdir $*)
 # environment
@@ -122,7 +121,7 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 INSIDE_NAUTILUS_PYTHON = 
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=4617bf6d064201ed1ef25047622f165e
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=38b3e146d8f8dec2ed61dc6d62309ec9
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -140,20 +139,19 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/46227f55_50a2_4c22_892b_1278fb089f53
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/0146c7cc_2223_4de0_95e5_32c573373b7d
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/glenmerlin/.local/bin:/home/glenmerlin/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/jvm/default/bin
+PATH = /home/glenmerlin/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # environment
 LESS_TERMCAP_se = [0m
 # default
 MAKEFILES := 
 # environment
 LC_MONETARY = en_US.UTF-8
- 
 # environment
 MOTD_SHOWN = pam
 # automatic
@@ -182,6 +180,8 @@ LESS = -R
 DESKTOP_SESSION = gnome
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
+# environment
+MOZ_DEBUS_REMOTE = 1
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -189,7 +189,7 @@ LOGNAME = glenmerlin
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2919
+SYSTEMD_EXEC_PID = 1491
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -205,7 +205,6 @@ LC_MEASUREMENT = en_US.UTF-8
 # environment
 _ = /usr/bin/make
 # environment
- 
 LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
@@ -245,13 +244,12 @@ VTE_VERSION = 6602
 XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome
- 
 # environment
 PKGFILE_PROMPT_INSTALL_MISSING = 1
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=118/1024=12%, Rehash=0, Collisions=22/151=15%
+# Load=119/1024=12%, Rehash=0, Collisions=22/152=14%
 
 # Pattern-specific Variable Values
 
@@ -259,9 +257,9 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 2068, inode 6005586): 11 files, no impossibilities.
+# . (device 66306, inode 24775849): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -290,9 +288,9 @@ all:
 # < := 
 # automatic
 # + := 
+ 
 # automatic
 # % := 
- 
 # automatic
 # ^ := 
 # automatic
@@ -314,7 +312,7 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-13 21:19:00.879006907
+#  Last modified 2022-03-10 17:15:25.987842136
 #  File has been updated.
 #  Successfully updated.
 
@@ -325,7 +323,6 @@ makefile:
 #  File has not been updated.
 
 # files hash-table stats:
- 
 # Load=5/1024=0%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
@@ -336,9 +333,9 @@ makefile:
 # strcache buffers: 1 (0) / strings = 17 / storage = 165 B / avg = 9 B
 # current buf: size = 8162 B / used = 165 B / count = 17 / avg = 9 B
 
-# strcache performance: lookups = 26 / hit rate = 34%
+# strcache performance: lookups = 27 / hit rate = 37%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Sun Mar 13 21:19:20 2022
+# Load=17/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Tue Mar 15 08:15:18 2022
 
  
