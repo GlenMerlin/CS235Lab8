@@ -38,26 +38,23 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                 currentNode = new Node<T>(interval);
                 return true;
             }
-            else {
-                if (interval == currentNode->interval){
-                    return false;
-                }
-                else if (interval < currentNode->interval){
-                    bool added = updateData(currentNode->left, interval);
-                    if (added) {
-                        updateMinMax(currentNode);
-                    }
-                    return added;
-                }
-                else {
-                    bool added = updateData(currentNode->left, interval);
-                    if (added) {
-                        updateMinMax(currentNode);
-                    }
-                    return added;
-                }
+            if (interval == currentNode->interval){
+                return false;
             }
-            return false;
+            else if (interval < currentNode->interval){
+                bool added = updateData(currentNode->left, interval);
+                if (added) {
+                    updateMinMax(currentNode);
+                }
+                return added;
+            }
+            else {
+                bool added = updateData(currentNode->right, interval);
+                if (added) {
+                    updateMinMax(currentNode);
+                }
+                return added;
+            }
         }
 
         void updateMinMax(Node<T>*& currentNode){
@@ -98,52 +95,47 @@ class AugmentedIntervalTree : public IntervalTree<T> {
         };
         
         bool deleteData(Node<T>*& currentNode, Interval<T> interval){
-            // if (currentNode == NULL){
-            //     cout << "value: " << interval << " not found, failed to delete" << endl;
-            //     return false;
-            // }
-            // else if (currentNode->interval == interval){
-            //     if (currentNode->left != nullptr && currentNode->right != nullptr){
-            //         // find the highest left value and replace it, then move the right child's pointer
-            //         Node* largestChild = currentNode->left;
-            //         while (largestChild->right != nullptr){
-            //             largestChild = largestChild->right;
-            //         }
-            //         currentNode->interval = largestChild->interval;
-            //         deleteData(currentNode->left, currentNode->interval);
-            //         return true;
-            //     }
-            //     else if (currentNode->left != nullptr && currentNode->right == nullptr){
-            //         // find the highest left value and replace it
-            //         Node* temp = currentNode->left;
-            //         delete currentNode;
-            //         currentNode = temp;
-            //         return true;
-            //     }
-            //     else if (currentNode->right != nullptr && currentNode->left == nullptr){
-            //         // replace the current value with the right child
-            //         Node* temp = currentNode->right;
-            //         delete currentNode;
-            //         currentNode = temp;
-            //         return true;
-            //     }
-            //     else if (currentNode->left == nullptr && currentNode->right == nullptr){
-            //         delete currentNode;
-            //         currentNode = NULL;
-            //         return true;
-            //     }
-            // }
-            // else {
-            //     if (interval < currentNode->interval){
-            //         return deleteData(currentNode->left, interval);
-            //     }
-            //     else if (interval > currentNode->interval){
-            //         return deleteData(currentNode->right, interval);
-            //     }
-            //     else {
-            //         return false;
-            //     }
-            // }
+            if (currentNode == nullptr){
+                cout << "value: " << interval << " not found, failed to delete" << endl;
+                return false;
+            }
+            if (currentNode->interval == interval){
+                if (currentNode->left != nullptr && currentNode->right != nullptr){
+                    // find the highest left value and replace it, then move the right child's pointer
+                    Node<T>* largestChild = currentNode->left;
+                    while (largestChild->right != nullptr){
+                        largestChild = largestChild->right;
+                    }
+                    currentNode = largestChild;
+                    deleteData(currentNode->left, currentNode->interval);
+                    return true;
+                }
+                else if (currentNode->left != nullptr && currentNode->right == nullptr){
+                    // find the highest left value and replace it
+                    Node<T>* temp = currentNode->left;
+                    delete currentNode;
+                    currentNode = temp;
+                    return true;
+                }
+                else if (currentNode->right != nullptr && currentNode->left == nullptr){
+                    // replace the current value with the right child
+                    Node<T>* temp = currentNode->right;
+                    delete currentNode;
+                    currentNode = temp;
+                    return true;
+                }
+                else if (currentNode->left == nullptr && currentNode->right == nullptr){
+                    delete currentNode;
+                    currentNode = nullptr;
+                    return true;
+                }
+            }
+            else if (interval < currentNode->interval){
+                return deleteData(currentNode->left, interval);
+            }
+            else {
+                return deleteData(currentNode->right, interval);
+            }
             return false;
         }
 
