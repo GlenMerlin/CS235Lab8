@@ -208,7 +208,7 @@ string to_string(T const& collection) {
 template<class T>
 void test(string const& message, T const &observed, T const &expected) {
     cout << message << endl;
-    cout << "Expected:" << endl << expected <<  endl << "Observed:" << endl << observed << endl;
+    cout << "Expected: " << expected << endl << "Observed: " << observed << endl;
     if (expected == observed) {
         cout << "Passed ✅" << endl;
     } else {

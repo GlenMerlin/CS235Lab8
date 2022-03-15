@@ -6,7 +6,9 @@ using namespace std;
 
 int main(){
     AugmentedIntervalTree<int> tree;
-    test("Empty Check", tree.is_empty(), false);
+    test("Empty Check", tree.is_empty(), true);
+    test("Add Check", tree.add(1,5), true);
+    test("Add Check", tree.add(2,5), true);
     return 0;
 }
 
