@@ -58,9 +58,10 @@ class AugmentedIntervalTree : public IntervalTree<T> {
         }
 
         void updateMinMax(Node<T>*& currentNode){
-            // if (currentNode == nullptr){
-            //     return;
-            // }
+            if (currentNode == nullptr){
+                return;
+            }
+            // TODO: BROKEN
             // currentNode->min_max = 1 + max(
             //     currentNode->left == nullptr ? -1 : currentNode->left->min_max,
             //     currentNode->right == nullptr ? -1 : currentNode->right->min_max
@@ -70,23 +71,25 @@ class AugmentedIntervalTree : public IntervalTree<T> {
         
         vector<Interval<T>> query(T const& point) const{
             vector<Interval<T>> nodes;
+            
             // queryHelper(this->root, point, nodes);
             return nodes;
         };
 
-        void queryHelper(Node<T>* const& node, T point, vector<T>& nodes){
+        void queryHelper(Node<T>* const& node, T point, vector<Interval<T>>& nodes){
             if (node == nullptr){
                 return;
             }
             return;
-
+            // TODO: BROKEN
             // queryHelper(node->left, point, nodes);
+
             // definitely wrong check but fix later
-            // if(abs(item - node->interval) <= 3){
-            //     nodes.push_back(node);
+            // if(node->interval->upper < point && node->interval->lower != point){
+            //     nodes.push_back(node->interval);
             // }
 
-            // queryHelper(node->right, point, items_found);
+            // queryHelper(node->right, point, nodes);
         }
         
         bool remove(T const& lower, T const& upper){
@@ -138,8 +141,4 @@ class AugmentedIntervalTree : public IntervalTree<T> {
             }
             return false;
         }
-
-        string to_string() const{
-            return "";
-        };
 };
