@@ -69,30 +69,28 @@ class AugmentedIntervalTree : public IntervalTree<T> {
             return;
         }
         
-        vector<Interval<T>> query(T const& point) const{
+        vector<Interval<T>> query(T const& point) const override{
             vector<Interval<T>> nodes;
-            
-            // queryHelper(this->root, point, nodes);
+            queryHelper(this->root, point, nodes);
             return nodes;
         };
 
-        void queryHelper(Node<T>* const& node, T point, vector<Interval<T>>& nodes){
-            if (node == nullptr){
+        void queryHelper(Node<T> *currentNode, T const &point, vector<Interval<T>>& nodes) const{
+            if (currentNode == nullptr){
                 return;
             }
-            return;
+            
             // TODO: BROKEN
-            // queryHelper(node->left, point, nodes);
+            queryHelper(currentNode->left, point, nodes);
 
-            // definitely wrong check but fix later
-            // if(node->interval->upper < point && node->interval->lower != point){
-            //     nodes.push_back(node->interval);
-            // }
+            if(currentNode->interval.contains(point)){
+                nodes.push_back(currentNode->interval);
+            }
 
-            // queryHelper(node->right, point, nodes);
+            queryHelper(currentNode->right, point, nodes);
         }
         
-        bool remove(T const& lower, T const& upper){
+        bool remove(T const& lower, T const& upper) override{
             Interval<T> interval(lower, upper);
             return deleteData(this->root, interval);
         };
