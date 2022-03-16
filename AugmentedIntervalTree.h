@@ -36,6 +36,7 @@ class AugmentedIntervalTree : public IntervalTree<T> {
         bool updateData(Node<T>*& currentNode, Interval<T> interval){
             if (currentNode == nullptr){
                 currentNode = new Node<T>(interval);
+                updateMinMax(currentNode);
                 return true;
             }
             if (interval == currentNode->interval){
@@ -61,11 +62,21 @@ class AugmentedIntervalTree : public IntervalTree<T> {
             if (currentNode == nullptr){
                 return;
             }
-            // TODO: BROKEN
-            // currentNode->min_max = 1 + max(
-            //     currentNode->left == nullptr ? -1 : currentNode->left->min_max,
-            //     currentNode->right == nullptr ? -1 : currentNode->right->min_max
-            // )
+            T lower, upper;
+            if (currentNode->left != nullptr){
+                lower = currentNode->left->min_max.lower;
+            }
+            else {
+                lower = currentNode->interval.lower;
+            }
+            if (currentNode->right != nullptr){
+                upper = currentNode->right->min_max.upper;
+            }
+            else{
+                upper = currentNode->interval.upper;
+            }
+            Interval<T> minMax(lower, upper);
+            currentNode->min_max = minMax;
             return;
         }
         
@@ -80,7 +91,6 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                 return;
             }
             
-            // TODO: BROKEN
             queryHelper(currentNode->left, point, nodes);
 
             if(currentNode->interval.contains(point)){
@@ -109,6 +119,7 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     }
                     currentNode = largestChild;
                     deleteData(currentNode->left, currentNode->interval);
+                    updateMinMax(currentNode);
                     return true;
                 }
                 else if (currentNode->left != nullptr && currentNode->right == nullptr){
@@ -116,6 +127,7 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     Node<T>* temp = currentNode->left;
                     delete currentNode;
                     currentNode = temp;
+                    updateMinMax(currentNode);
                     return true;
                 }
                 else if (currentNode->right != nullptr && currentNode->left == nullptr){
@@ -123,11 +135,13 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     Node<T>* temp = currentNode->right;
                     delete currentNode;
                     currentNode = temp;
+                    updateMinMax(currentNode);
                     return true;
                 }
                 else if (currentNode->left == nullptr && currentNode->right == nullptr){
                     delete currentNode;
                     currentNode = nullptr;
+                    updateMinMax(currentNode);
                     return true;
                 }
             }
