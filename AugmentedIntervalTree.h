@@ -1,4 +1,7 @@
 #include "IntervalTree.h"
+#include "algorithm"
+
+
 
 using namespace std;
 template<class T>
@@ -62,21 +65,17 @@ class AugmentedIntervalTree : public IntervalTree<T> {
             if (currentNode == nullptr){
                 return;
             }
-            T lower, upper;
+            currentNode->min_max = currentNode->interval;
+
             if (currentNode->left != nullptr){
-                lower = currentNode->left->min_max.lower;
-            }
-            else {
-                lower = currentNode->interval.lower;
+                currentNode->min_max.lower = min(currentNode->min_max.lower, currentNode->left->min_max.lower);
+                currentNode->min_max.upper = max(currentNode->min_max.upper, currentNode->left->min_max.upper);
             }
             if (currentNode->right != nullptr){
-                upper = currentNode->right->min_max.upper;
+                
+                currentNode->min_max.lower = min(currentNode->min_max.lower, currentNode->right->min_max.lower);
+                currentNode->min_max.upper = max(currentNode->min_max.upper, currentNode->right->min_max.upper);
             }
-            else{
-                upper = currentNode->interval.upper;
-            }
-            Interval<T> minMax(lower, upper);
-            currentNode->min_max = minMax;
             return;
         }
         
@@ -117,9 +116,10 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     while (largestChild->right != nullptr){
                         largestChild = largestChild->right;
                     }
-                    currentNode = largestChild;
-                    deleteData(currentNode->left, currentNode->interval);
-                    updateMinMax(currentNode);
+                    Interval<T> swap = currentNode->interval;
+                    currentNode->interval = largestChild->interval;
+                    largestChild->interval = swap;
+                    deleteData(currentNode->left, swap);
                     return true;
                 }
                 else if (currentNode->left != nullptr && currentNode->right == nullptr){
@@ -127,7 +127,6 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     Node<T>* temp = currentNode->left;
                     delete currentNode;
                     currentNode = temp;
-                    updateMinMax(currentNode);
                     return true;
                 }
                 else if (currentNode->right != nullptr && currentNode->left == nullptr){
@@ -135,21 +134,27 @@ class AugmentedIntervalTree : public IntervalTree<T> {
                     Node<T>* temp = currentNode->right;
                     delete currentNode;
                     currentNode = temp;
-                    updateMinMax(currentNode);
                     return true;
                 }
                 else if (currentNode->left == nullptr && currentNode->right == nullptr){
                     delete currentNode;
                     currentNode = nullptr;
-                    updateMinMax(currentNode);
                     return true;
                 }
             }
             else if (interval < currentNode->interval){
-                return deleteData(currentNode->left, interval);
+                bool removed = deleteData(currentNode->left, interval);
+                if (removed){
+                    updateMinMax(currentNode);   
+                }
+                return removed;
             }
             else {
-                return deleteData(currentNode->right, interval);
+                bool removed = deleteData(currentNode->right, interval);
+                if (removed){
+                    updateMinMax(currentNode);   
+                }
+                return removed;
             }
             return false;
         }
